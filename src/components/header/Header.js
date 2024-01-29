@@ -1,34 +1,28 @@
 import React, { useContext } from 'react'
 import { useAppContext } from '../../Context'
-import { Nav, NavItem, NavLink, NavbarBrand } from "reactstrap"
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 const Header = () => {
 
     return (
-        <div style={{
-            backgroundColor: "navy",
-            color: 'white',
-            padding: '20px'
-        }}>
-            <Nav pills>
-                <NavbarBrand href='/'>
-                    Hotel
-                </NavbarBrand>
-                <NavItem>
-                    <NavLink href="#" >Dashboard</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink href="#">Login</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink href="#">Signup</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink href="#">About us</NavLink>
-                </NavItem>
-            </Nav>
+        <>
+            <Navbar bg="dark" data-bs-theme="dark">
+                <Container>
+                    <Navbar.Brand href="#home">Hotel</Navbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="#">Services</Nav.Link>
+                        <Nav.Link href="#">Notice</Nav.Link>
+                        <Nav.Link href="#">Contact</Nav.Link>
 
-        </div>
+                    </Nav>
+                </Container>
+            </Navbar>
+
+        </>
+
     )
 }
 
