@@ -25,7 +25,6 @@ const Main = () => {
             </div>
             <div className='row'>
                 <Footer />
-
             </div>
         </div>
     )
