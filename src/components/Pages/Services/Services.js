@@ -2,22 +2,30 @@ import React from 'react'
 
 const Services = () => {
     return (
-        <div style={{
-            align: 'center'
-        }}>
-            <h2>Services
-            </h2>
-            <ul>
-                <li>
-                    Book a room
-                </li>
-                <li>
-                    Room Service
-                </li>
-                <li>
-                    Oragnize Event
-                </li>
-            </ul>
+        <div className='container' >
+            <div className='servicelist'>
+                <h2>Services
+                </h2>
+                <ul>
+                    <li>
+                        <a href='/rooms'>
+                            Book a room
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href=''>
+                            Room Service
+                        </a>
+                    </li>
+                    <li>
+                        <a href=''>
+                            Oragnize Event
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     )
 }

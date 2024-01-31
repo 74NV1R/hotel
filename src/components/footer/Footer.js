@@ -11,10 +11,12 @@ const Footer = () => {
             position: 'absolute',
             height: '100px',
             width: '100%',
-            display: 'block'
+            display: 'block',
+            color: 'white',
+            align: 'center'
         }}>
-            Footer
-        </div>
+            Tanvir Hasan
+        </div >
 
     )
 }

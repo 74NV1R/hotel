@@ -51,3 +51,31 @@ body {
   background-color: #2e1111;
 
 }
+
+.servicelist {}
+
+.servicelist a {
+  padding: 0.5rem;
+  text-decoration: none;
+
+}
+
+.servicelist li {
+  border: 1px solid black;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  list-style: none;
+  display: block;
+}
+
+.servicelist li:hover {
+  background-color: gray;
+  filter: drop-shadow(0 0 5px 5px black);
+  color: white;
+
+}
+
+.servicelist button {
+  float: right;
+}
