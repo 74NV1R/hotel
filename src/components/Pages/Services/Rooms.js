@@ -13,6 +13,15 @@ const Rooms = () => {
         })
     }
 
+    const handleDuration = () => {
+        updateItems({
+
+        })
+
+    }
+
+    let holdingTime = 0
+
     return (
         <div className='container'>
             <div className='row'>
@@ -33,6 +42,10 @@ const Rooms = () => {
                             Suit <button type="button" class="btn btn-outline-primary" onClick={() => updateBill(35)}>AC</button> <button type="button" class="btn btn-outline-primary" disabled>Non AC</button>
                         </li>
                     </ul>
+
+                    <br />
+                    Duration of your stay:
+
                 </div>
             </div>
 
