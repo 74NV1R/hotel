@@ -15,7 +15,7 @@ const Main = () => {
             <div className='row'>
                 <Header />
             </div>
-            <div>
+            <div className='container'>
                 <Routes>
                     <Route path='/services' element={<Services />} />
                     <Route path='/notice' element={<Notice />} />

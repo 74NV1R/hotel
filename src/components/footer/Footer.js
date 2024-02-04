@@ -13,7 +13,8 @@ const Footer = () => {
             width: '100%',
             display: 'block',
             color: 'white',
-            align: 'center'
+            textAlign: 'center',
+            marginTop: 'auto'
         }}>
             Tanvir Hasan
         </div >

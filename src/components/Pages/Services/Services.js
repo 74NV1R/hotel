@@ -9,30 +9,38 @@ const Services = () => {
                     <h2>Choose our services</h2>
                     <br />
 
-                    <a href="/rooms" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                    <a href="/rooms" class="block max-w-sm p-6 bg-white border border-black-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 hover:drop-shadow-2xl dark:border-gray-700 dark:hover:bg-gray-700" >
 
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">Book a room</h5>
                         <p class="font-normal text-black-700 dark:text-gray-400">Various kinds of room to choose and book, now!</p>
                     </a>
                     <br />
 
-                    <a href="/rooms" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                    <a href="/rooms" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 hover:drop-shadow-2xl dark:border-gray-700 dark:hover:bg-gray-700">
 
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">Room service</h5>
                         <p class="font-normal text-black-700 dark:text-gray-400">Get your desired services right in your room, delivered!</p>
                     </a>
                     <br />
-                    <a href="/rooms" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                    <a href="/rooms" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 hover:drop-shadow-2xl dark:border-gray-700 dark:hover:bg-gray-700">
 
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">Organize an event</h5>
                         <p class="font-normal text-black-700 dark:text-gray-400">Hire our space and people to design and implement the ceremony you want!</p>
                     </a>
 
-                    <br />
 
-                    <a href='#' className='block max-w-sm p-6 bg-red-800 border-gray-200 rounded-lg hover:drop-shadow-sm'>
-                        Here
-                    </a>
+
+
+                    <br />
+                    <div className="card w-96 bg-primary text-primary-content">
+                        <div className="card-body">
+                            <h2 className="card-title">Card title!</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div className="card-actions justify-end">
+                                <button className="btn">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
