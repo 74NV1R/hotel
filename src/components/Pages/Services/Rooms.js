@@ -1,6 +1,7 @@
 import { Button } from 'bootstrap'
 import React from 'react'
 import { useAppContext } from '../../../Context'
+import Roomtypes from './Roomtypes'
 
 const Rooms = () => {
 
@@ -13,45 +14,31 @@ const Rooms = () => {
         })
     }
 
-    const handleDuration = () => {
-        updateItems({
+    const roomTypes = [
+        { type: 'Single', charge: 12.99 },
+        { type: 'Double', charge: 24.99 },
+        { type: 'Suite', charge: 39.99 },
 
-        })
 
-    }
-
-    let holdingTime = 0
-
+    ]
     return (
-        <div className='container'>
-            <div className='row'>
-                <div className='servicelist'>
 
 
-                    <h2>
-                        Rooms available
-                    </h2>
-                    <ul>
-                        <li>
-                            Single <button type="button" class="btn btn-outline-primary" onClick={() => updateBill(15)}>AC</button> <button type="button" class="btn btn-outline-primary" onClick={() => updateBill(10)} >Non AC</button>
-                        </li>
-                        <li>
-                            Double <button type="button" class="btn btn-outline-primary" onClick={() => updateBill(25)}>AC</button> <button type="button" class="btn btn-outline-primary" onClick={() => updateBill(20)}>Non AC</button>
-                        </li>
-                        <li>
-                            Suit <button type="button" class="btn btn-outline-primary" onClick={() => updateBill(35)}>AC</button> <button type="button" class="btn btn-outline-primary" disabled>Non AC</button>
-                        </li>
-                    </ul>
+        < div >
 
-                    <br />
-                    Duration of your stay:
+            {/* <div className='container'>
+            <Roomtypes roomTypes={roomTypes} />
 
-                </div>
-            </div>
+        </div> */}
+            {
+                roomTypes.map((room, index) => (
+                    <Roomtypes key={index} type={room.type} charge={room.charge} />
+                ))
+            }
+        </div >
 
 
-        </div>
     )
 }
-
 export default Rooms
+

@@ -17,6 +17,12 @@ const Footer = () => {
             marginTop: 'auto'
         }}>
             Tanvir Hasan
+            <br />
+            <a href='https://github.com/74NV1R' style={{
+                textDecoration: 'none'
+            }}>
+                GitHub
+            </a>
         </div >
 
     )
