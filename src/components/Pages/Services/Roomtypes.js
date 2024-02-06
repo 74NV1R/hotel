@@ -1,10 +1,15 @@
+import { Modal, Button, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
 import React, { useState } from 'react'
 
 const Roomtypes = ({ type, charge }) => {
 
     const [expand, setExpand] = useState(false)
-    const [modalOpen, openModal] = useState(false)
     const [book, setBook] = useState(false)
+    const [selectedNumber, setSelectedNumber] = useState(1)
+    const [modal, setModal] = useState(false)
+    const [date, setDate] = useState('')
+
+    const toggle = () => setModal(!modal)
 
 
     const toggleExpand = () => {
@@ -15,15 +20,11 @@ const Roomtypes = ({ type, charge }) => {
         setBook(!book)
     }
 
-    const toggleModal = () => {
-        openModal(!modalOpen)
-    }
-
     const bookRoom = () => {
 
     }
 
-    const [selectedNumber, setSelectedNumber] = useState(1)
+
 
     const handleChange = (e) => {
         setSelectedNumber(parseInt(e.target.value))
@@ -47,7 +48,7 @@ const Roomtypes = ({ type, charge }) => {
                 {expand && (
                     <div className="card-body">
                         <p>{charge}$ daily</p>
-                        <button type="button" class="text-white bg-red-900 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-900 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800" onClick={bookRoom}>Check in today</button>
+                        <button type="button" class="text-white bg-red-900 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-900 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800" onClick={toggle}>Check in today</button>
                         <button type="button" class="text-white bg-red-900 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-900 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800" onClick={toggleBook} >Book for later</button>
 
                     </div>
@@ -66,11 +67,30 @@ const Roomtypes = ({ type, charge }) => {
                         ))}
                     </select>
                     <p>Your check-in date: {calculateFutureDate(selectedNumber)}</p>
+                    <br />
+                    <button type="button" class="text-white bg-red-900 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-900 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800" onClick={setModal} >Book</button>
 
                 </span> : null}
 
 
             </div>
+            <Modal isOpen={modal} toggle={toggle}>
+                <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+                <ModalBody>
+                    {book ? 'Book' : 'Check-in'} ?
+                    Starting from: {book ? calculateFutureDate(selectedNumber) : 'today'}
+                    <br />
+                    Starting price: {charge}
+                </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" onClick={bookRoom}>
+                        Confirm
+                    </Button>{' '}
+                    <Button color="secondary" onClick={toggle}>
+                        Cancel
+                    </Button>
+                </ModalFooter>
+            </Modal>
         </div>
 
     )
