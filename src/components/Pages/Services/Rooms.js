@@ -24,12 +24,7 @@ const Rooms = () => {
     return (
 
 
-        < div >
-
-            {/* <div className='container'>
-            <Roomtypes roomTypes={roomTypes} />
-
-        </div> */}
+        < div className='row'>
             {
                 roomTypes.map((room, index) => (
                     <Roomtypes key={index} type={room.type} charge={room.charge} />
