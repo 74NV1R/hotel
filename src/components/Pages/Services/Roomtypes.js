@@ -12,13 +12,12 @@ const Roomtypes = ({ type, charge }) => {
         updateItems({
             cost: charge,
             services: [...items.services, roomType],
-            checkInTime: new Date() + selectedNumber,
+            checkInTime: date,
             holdingTime: 0
         })
 
-        console.log(items)
+        //console.log(items)
     }
-
 
     const [roomType, setRoomType] = useState(null)
     const [expand, setExpand] = useState(false)
@@ -27,10 +26,14 @@ const Roomtypes = ({ type, charge }) => {
     const [modal, setModal] = useState(false)
     const [date, setDate] = useState('')
 
-    const toggle = () => setModal(!modal)
+    const toggleModal = () => {
+        setModal(!modal)
+        console.log(type)
+    }
 
 
     const toggleExpand = () => {
+        console.log(type)
         setRoomType(type)
         setExpand(!expand)
     }
@@ -61,7 +64,6 @@ const Roomtypes = ({ type, charge }) => {
             .then(response => {
                 if (response.status === 200) {
                     console.log('posted')
-                    //onClose()
                 }
             })
             .catch(err => {
@@ -94,7 +96,8 @@ const Roomtypes = ({ type, charge }) => {
                 {expand && (
                     <div className="card-body">
                         <p>{charge}$ daily</p>
-                        <button type="button" className="text-white bg-red-900 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-900 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800" onClick={toggle}>Check in today</button>
+                        <button type="button" className="text-white bg-red-900 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-900 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800" onClick={
+                            toggleModal}>Check in today</button>
                         <button type="button" className="text-white bg-red-900 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-900 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800" onClick={toggleBook} >Book for later</button>
 
                     </div>
@@ -120,9 +123,10 @@ const Roomtypes = ({ type, charge }) => {
 
 
             </div>
-            <Modal isOpen={modal} toggle={toggle}>
-                <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+            <Modal isOpen={modal} toggleModal={toggleModal}>
+                <ModalHeader toggleModal={toggleModal}>Confirmation</ModalHeader>
                 <ModalBody>
+                    {type} <br />
                     {book ? 'Book' : 'Check-in'} ?
                     Starting from: {book ? calculateFutureDate(selectedNumber) : 'today'}
                     <br />
@@ -132,7 +136,7 @@ const Roomtypes = ({ type, charge }) => {
                     <Button color="primary" onClick={bookRoom}>
                         Confirm
                     </Button>{' '}
-                    <Button color="secondary" onClick={toggle}>
+                    <Button color="secondary" onClick={toggleModal}>
                         Cancel
                     </Button>
                 </ModalFooter>
